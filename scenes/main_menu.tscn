@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=3 uid="uid://yqjk37mtt14w"]
+
+[ext_resource type="Script" uid="uid://coqjxvxigbj55" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://m4c11kicjaap" path="res://images/Test01.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://byu5n2vcailpx" path="res://images/Test02.png" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cami074smq08n" path="res://images/Test03.png" id="4_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://ckqmv3invtjsd" path="res://images/Test04.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cpr0cc26ld1j7" path="res://images/Test05.png" id="6_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://dddbbf6q73043" path="res://images/Test06.png" id="7_lgwnu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font_size = 25
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbmy8"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgwnu"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_flqon"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Container" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_top = 124.0
+offset_right = 1152.0
+offset_bottom = 524.0
+alignment = 1
+
+[node name="Test1" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_ekxnf")
+
+[node name="Label" type="Label" parent="Container/Test1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test1"
+label_settings = SubResource("LabelSettings_oa1go")
+
+[node name="Test2" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_oa1go")
+
+[node name="Label" type="Label" parent="Container/Test2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test2"
+label_settings = SubResource("LabelSettings_tbmy8")
+
+[node name="Test3" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_tbmy8")
+
+[node name="Label" type="Label" parent="Container/Test3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test3"
+label_settings = SubResource("LabelSettings_jk1qb")
+
+[node name="Test4" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("5_jk1qb")
+
+[node name="Label" type="Label" parent="Container/Test4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test4"
+label_settings = SubResource("LabelSettings_5dd4i")
+
+[node name="Test5" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("6_5dd4i")
+
+[node name="Label" type="Label" parent="Container/Test5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test5"
+label_settings = SubResource("LabelSettings_lgwnu")
+
+[node name="Test6" type="TextureButton" parent="Container"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("7_lgwnu")
+
+[node name="Label" type="Label" parent="Container/Test6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test6"
+label_settings = SubResource("LabelSettings_flqon")
+
+[node name="Separator" type="HSeparator" parent="Container"]
+custom_minimum_size = Vector2(900, 25)
+layout_mode = 2
+
+[node name="QualityMin" type="Button" parent="Container"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quality: MIN"
+
+[node name="QualityMax" type="Button" parent="Container"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quality: MAX"
+
+[node name="SaveLog" type="Button" parent="Container"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Save Log"
