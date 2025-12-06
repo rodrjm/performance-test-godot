@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://xdfg5iog7y6c"]
+
+[ext_resource type="Script" uid="uid://d2ctb8xgqfhp2" path="res://scripts/factory.gd" id="1_oydga"]
+[ext_resource type="Script" uid="uid://c7yd2fum5x51f" path="res://scripts/fps.gd" id="2_h46hq"]
+[ext_resource type="PackedScene" uid="uid://djse2h1nryr0b" path="res://objects/cube.tscn" id="2_x62gx"]
+[ext_resource type="Script" uid="uid://d0x58sw7c5rgs" path="res://scripts/stop.gd" id="3_ip444"]
+
+[node name="Test1" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Factory" type="Node3D" parent="."]
+script = ExtResource("1_oydga")
+test_name = "Test1"
+object_to_create = ExtResource("2_x62gx")
+
+[node name="FPS" type="Label" parent="."]
+offset_right = 79.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+script = ExtResource("2_h46hq")
+
+[node name="Stop" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+script = ExtResource("3_ip444")
