@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxt1yxfhleqei"]
+
+[sub_resource type="Gradient" id="Gradient_pp7wd"]
+offsets = PackedFloat32Array(0, 0.136364, 0.590909, 0.809091, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 1, 0.647059, 0, 1, 0.352941, 0.352941, 0.352941, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xqx8s"]
+gradient = SubResource("Gradient_pp7wd")
+width = 128
+
+[sub_resource type="Curve" id="Curve_cwghq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j07a1"]
+width = 128
+curve = SubResource("Curve_cwghq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08t7l"]
+angle_min = -180.0
+angle_max = 180.0
+gravity = Vector3(0, 1, 0)
+scale_curve = SubResource("CurveTexture_j07a1")
+color_ramp = SubResource("GradientTexture1D_xqx8s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xawox"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_drwqk"]
+material = SubResource("StandardMaterial3D_xawox")
+
+[node name="FireSource" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_08t7l")
+draw_pass_1 = SubResource("QuadMesh_drwqk")
