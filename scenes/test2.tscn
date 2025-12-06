@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgwgmakdvy418"]
+
+[ext_resource type="ArrayMesh" uid="uid://cg0p7cvuqisyw" path="res://models/Modelo Facultad/Facultad2024_versionExpoCiencia.obj" id="1_51wsq"]
+[ext_resource type="Script" uid="uid://dombub8ttfn73" path="res://scripts/spacer.gd" id="1_jorxo"]
+[ext_resource type="Script" uid="uid://c7yd2fum5x51f" path="res://scripts/fps.gd" id="2_51wsq"]
+[ext_resource type="Script" uid="uid://c1walp23mj2w4" path="res://scripts/rotator.gd" id="2_jorxo"]
+[ext_resource type="Script" uid="uid://d0x58sw7c5rgs" path="res://scripts/stop.gd" id="3_jorxo"]
+
+[node name="Test2" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1_jorxo")
+test_name = "Test2"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="InfoUNLP" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_51wsq")
+script = ExtResource("2_jorxo")
+
+[node name="FPS" type="Label" parent="."]
+offset_right = 79.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+script = ExtResource("2_51wsq")
+
+[node name="Stop" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+script = ExtResource("3_jorxo")
